@@ -153,7 +153,7 @@ def update_company(company_id: UUID, update: CompanyUpdate):
         raise HTTPException(status_code=404, detail="Company not found")
     stored = companies[company_id].model_dump()
     stored.update(update.model_dump(exclude_unset=True))
-    companies[company_id] = CompanyRead(**stored)
+    companies[company_id] = CompanyUpdate(**stored)
     return companies[company_id]
 
 @app.delete("/companies/{company_id}", status_code=204)

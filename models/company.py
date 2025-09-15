@@ -75,27 +75,27 @@ class CompanyCreate(CompanyBase):
 class CompanyUpdate(BaseModel):
     """Partial update of company; ID is taken from path"""
     name: Optional[str] = Field(
-        ...,
+        None,
         description="Name of the company.",
         json_schema_extra={"example": "Major Company Inc."}
     )
     industry: Optional[str] = Field(
-        ...,
+        None,
         description="Industry that the company is a part of.",
         json_schema_extra={"example": "Aerospace"}
     )
     employees: Optional[int] = Field(
-        ...,
+        None,
         description="Number of current employees.",
         json_schema_extra={"example": 400}
     )
     phone: Optional[str] = Field(
-        ...,
+        None,
         description="The public phone number of the company.",
         json_schema_extra={"example": "555-555-5555"}
     )
     state: Optional[str] = Field(
-        ...,
+        None,
         description="State where the company is headquarted or based.",
         json_schema_extra={"example": "New York"}
     )
